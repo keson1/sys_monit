@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统实时信息</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+    p{ margin:0 auto}
+    /* 设置p上下距离为0，左右自动 */
+    </style>
+</head>
+<body>
+<h2>{{ city }}系统情况：</h2>
+{% for message in info %}
+    {% if message[0]=='error' %}
+        <h3><font color="#FF0000"><b>{{ message[5] }}:连接错误请检查！</b></font></h3>
+    {% else %}
+        <h3><font color="#FF0000"><b>{{ message[4] }}节点（{{ message[5] }}）</b></font>:</h3>
+        <p><b>磁盘</b>:</p>
+        {% for disk_info in message[0] %}
+            <p><font color="#000000"><b>磁盘大小</b></font>: <font color="#0000FF">{{ disk_info[0] }}</font>, <font color="#000000"><b> &nbsp; &nbsp; &nbsp;已使用率</b></font>:  <font color="#0000FF">{{ disk_info[1] }}</font>, <font color="#000000"><b> &nbsp; &nbsp;目录</b></font>: <font color="#0000FF">{{ disk_info[2] }}</font></p>
+        {% endfor %}
+        <p><b>内存</b>:<font color="#000000"><b>剩余</b></font>: <font color="#0000FF">{{ message[1][0] }}</font>, <font color="#000000"><b> &nbsp; &nbsp; &nbsp;总共</b></font>: <font color="#0000FF">{{ message[1][1] }}</font></p>
+        <p><b>CPU</b>:<font color="#000000"><b>已使用</b></font>: <font color="#0000FF">{{ message[2] }}%</font></p>
+        <p><b>Load Average</b>:<font color="#0000FF">{{ message[3] }}</font></p>
+    {% endif %}
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,91 @@
+dazhou:
+  name: 达州
+  ips: ['51.172.0.52', '51.172.0.53', '51.172.0.54', '51.172.0.55']
+  message_ip: 51.172.0.53
+  ssh_port: 22
+  redis_port: 6380
+  redis_key: _jobs
+  redis_auth: 0
+  ssh_password: yisa_dz_030509
+
+mianyang:
+  name: 绵阳
+  ips: ['51.36.1.153', '51.36.1.152', '51.36.1.151','51.36.7.21', '51.36.7.22', '51.36.7.25','51.36.7.26','51.36.7.23','51.36.7.24']
+  message_ip: 51.36.7.21
+  ssh_port: 22
+  redis_port: 6380
+  redis_key: _jobs
+  redis_auth: 0
+  ssh_password: yisa_my_030509
+  
+luzhou:
+  name: 泸州
+  ips: ['51.116.31.244', '51.116.31.243', '51.116.31.2']
+  message_ip: 51.116.31.243
+  ssh_port: 22
+  redis_port: 6379
+  redis_key: _jobs
+  redis_auth: 0
+  ssh_password: yisa_lz_030509
+  
+nanchong:
+  name: 南充
+  ips: ['51.108.1.241', '51.108.1.242', '51.108.1.243']
+  message_ip: 51.108.1.242
+  ssh_port: 22
+  redis_port: 6380
+  redis_key: _jobs
+  redis_auth: 0
+  ssh_password: yisa_nc_030509
+ 
+yibin:
+  name: 宜宾
+  ips: ['51.84.1.66', '51.84.1.69', '51.84.1.70', '51.84.1.71', '51.84.1.72', '51.84.1.73','51.84.1.74','51.84.1.67','51.84.1.68']
+  message_ip: 51.84.1.70
+  ssh_port: 22
+  redis_port: 6380
+  redis_key: _jobs
+  redis_auth: 0
+  ssh_password: yisa_yb_030509
+  
+ziyang:
+  name: 资阳
+  ips: ['51.204.0.51', '51.204.0.52', '51.204.0.53', '51.204.0.54']
+  message_ip: 51.204.0.54
+  ssh_port: 22
+  redis_port: 6379
+  redis_key: _jobs
+  redis_auth: 0
+  ssh_password: yisa_zy_030509
+
+deyang:
+  name: 德阳
+  ips: ['51.56.4.162']
+  message_ip: 51.56.4.162
+  ssh_port: 22
+  redis_port: 6379
+  redis_key: _jobs_dy
+  redis_auth: 0
+  ssh_password: yisa_dy_030509
+  
+liangshan:
+  name: 凉山
+  ips: ['51.1.1.127','51.1.1.130']
+  message_ip: 51.1.1.127
+  ssh_port: 22
+  redis_port: 6380
+  redis_key: _jobs
+  redis_auth: 0
+  ssh_password: yisa_st_030509
+  
+shengting:
+  name: 省厅
+  ips: ['51.1.1.124','51.1.1.122']
+  message_ip: 51.1.1.124
+  ssh_port: 22
+  redis_port: 6380
+  redis_key: _jobs
+  redis_auth: yisa123456q
+  ssh_password: yisa_st_030509
+  
+ 

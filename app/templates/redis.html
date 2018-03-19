@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>redis</title>
+</head>
+<body>
+<h1><b>{{ city }}redis积压情况({{ ip }})</b>:</h1>
+{% if result == 'error' %}
+    <p><font size="6" color="#FF0000"><b>连接错误请检查</b></font></p>
+{% else %}
+    <p><font size="6" color="#000000"><b>redis:</b></font>  <font size="6" color="#0000FF"><b>{{ result }}</b></font></p>
+{% endif %}
+</body>
+</html>

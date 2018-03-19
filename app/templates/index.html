@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>系统监控</title>
+</head>
+<body>
+<h1>各地市系统情况：</h1>
+{% for i in info %}
+    <h2><a href="http://127.0.0.1:5000/{{ i }}/sys_info/">{{ info[i]['name'] }}实时系统信息</a>:<a href="http://127.0.0.1:5000/{{ i }}/redis/{{ info[i]['redis_port'] }}/{{ info[i]['redis_key'] }}/{{ info[i]['redis_auth'] }}/">  &nbsp;{{ info[i]['name'] }}redis_{{ info[i]['redis_port'] }}_{{ info[i]['redis_key'] }}</a>:<a href="http://127.0.0.1:5000/{{ i }}/device_info/">  &nbsp;{{ info[i]['name'] }}设备信息</a></h2>
+{% endfor %}
+</body>
+</html>

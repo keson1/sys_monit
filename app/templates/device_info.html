@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设备信息</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+    p{ margin:0 auto}
+    /* 设置p上下距离为0，左右自动 */
+    </style>
+</head>
+<body>
+<h2>{{ city }}设备情况：</h2>
+{% for message in info %}
+    {% if message[0]=='error' %}
+        <h3><font color="#FF0000"><b>{{ message[6] }}:连接错误请检查</b></font>:</h3>
+    {% else %}
+        <h3><font color="#FF0000"><b>{{ message[5] }}节点（{{ message[6] }}）</b></font>:</h3>
+        <p><font color="#000000"><b>磁盘信息</b></font>: <font color="#0000FF">{{ message[0] }}</font>
+        <p><font color="#000000"><b>内存信息</b></font>: <font color="#0000FF">{{ message[1] }}</font>
+        <p><font color="#000000"><b>CPU信息</b></font>: <font color="#0000FF">{{ message[2] }}</font>
+        <p><font color="#000000"><b>主板信息</b></font>: <font color="#0000FF">{{ message[3] }}</font>
+        <p><font color="#000000"><b>加密狗个数</b></font>: <font color="#0000FF">{{ message[4] }}</font>
+    {% endif %}
+{% endfor %}
+</body>
+</html>
