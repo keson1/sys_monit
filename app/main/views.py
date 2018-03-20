@@ -7,7 +7,6 @@
 from flask import render_template
 import sys,os
 from . import main
-from system_info import sys_info
 import yaml
 from paramiko_ssh import ssh
 
