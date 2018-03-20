@@ -40,7 +40,7 @@ class sys_info():
 
     #磁盘信息
     def disk(self):
-        cmd = 'df -h|awk \'{print $2,$5,$6}\'|grep -vE \'(/dev|/run|/sys|Use|/boot)\''
+        cmd = 'df -h|awk \'{print $2,$5,$6}\'|grep -vE \'(/dev|/run|/sys|Use|/boot)\'df -h|awk \'{print $2,$5,$6}\'|grep -vE \'(/dev|/run|/sys|Use|/boot)\''
         disk = self.ssh(cmd)
         if disk == 'error':
             return disk
