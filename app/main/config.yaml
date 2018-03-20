@@ -88,13 +88,3 @@ shengting:
   redis_auth: yisa123456q
   ssh_password: yisa_st_030509
   
- 
-test:
-  name: 虚拟机
-  ips: ['192.168.171.200']
-  message_ip: 192.168.171.200
-  ssh_port: 22
-  redis_port: 6379
-  redis_key: _jobs
-  redis_auth: 0
-  ssh_password: yisa123456
