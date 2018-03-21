@@ -63,11 +63,14 @@ def device_info(city):
     password = info[city]['ssh_password']
     port = info[city]['ssh_port']
     device_info = []
-    cmdlist = ['dmidecode |grep -A16 \'System Information$\'|grep -E \'Manufacturer|Product\'',
-               'dmidecode -t 4 |grep Version | uniq',
-               'dmidecode -t 17 | grep \'Size:\'|grep -v \'No Module Installed\'',
-               '/usr/bin/lsusb |grep Aladdin |wc -l',
-               'fdisk -l | grep \'Disk /dev/s\'|awk -F\' \' \'{print $2 $3 $4}\'', 'hostname']
+    cmdlist = ['dmidecode | grep  -A2 \'System Information\'|sed -n \'2,3p\'', #主板
+               'dmidecode -t 4 |grep Version | uniq',                         #cpu
+               'dmidecode -t 17 | grep -e \'Manufacturer\|Size\' | grep -v \'NO DIMM\|No Module Installed\'', #内存
+               '/usr/bin/lsusb |grep \'Aladdin Knowledge Systems HASP\' |wc -l',   #加密狗
+               'fdisk -l | grep -e \'/dev/s.*:\|/dev/s.*：\'|awk -F\' \' \'{print $2 $3 $4}\'',  #硬盘大小
+               'lspci | grep VGA | grep NVIDIA | awk -F[ \'{print $2}\' | awk -F] \'{print $1}\'', #显卡
+               'cat /proc/scsi/scsi | grep \'Model:\'',           #硬盘厂商
+               'hostname']    #主机名
     for ip in ips:
         a = ssh(ip, password, port, cmdlist)
         a.append(ip)
