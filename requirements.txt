@@ -23,7 +23,7 @@ lxml==3.8.0
 Mako==1.0.7
 MarkupSafe==1.0
 MySQL-python==1.2.3
-paramiko==2.4.0
+paramiko==2.10.1
 pyasn1==0.4.2
 pycparser==2.18
 PyNaCl==1.2.1
